@@ -31,4 +31,4 @@ $(document).ready(function () {
     $(`.page-load`).html(`My First Movies App`);
   });
   // remove the "loading..." message and replace it with HTML nothing
-});
+}); 
