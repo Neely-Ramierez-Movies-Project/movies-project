@@ -2,7 +2,7 @@ const url = "https://codeup-json-server.glitch.me/movies";
 
 const html = {
   divO: `<div class="movie">`,
-  h1TitleO: `<h1 class="title>`,
+  h1TitleO: `<h1 class="title">`,
   h1TitleC: `</h1>`,
   spanDirectorO: `<span class="director">`,
   spanDirectorC: `</span>`,
@@ -28,6 +28,7 @@ $(document).ready(function () {
     data.forEach(function (movie) {
       $(`.container-movies`).append(`${html.divO}${html.h1TitleO}${movie.title}${html.h1TitleC}${html.spanDirectorO}${movie.director}${html.spanDirectorC}${html.spanIdO}${movie.id}${html.spanIdC}${html.spanGenreO}${movie.genre}${html.spanGenreC}${html.spanRatingO}${movie.rating}${html.spanRatingC}${html.divC}`);
     });
+    $(`.page-load`).html(`My First Movies App`);
   });
   // remove the "loading..." message and replace it with HTML nothing
 });
