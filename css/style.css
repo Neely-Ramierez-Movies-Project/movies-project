@@ -1,5 +1,4 @@
 * {
-  background-color: #000;
   color: white;
   font-family: sans-serif;
   padding: 0;
@@ -7,6 +6,7 @@
 }
 
 body {
+  background-color: #000;
   padding: 0;
   margin: 0;
 }
@@ -23,21 +23,38 @@ body {
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
-  border: 1px solid white;
 }
 
 .movie {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 16em;
-  border: 1px solid white;
-  margin: 0;
-  padding: 1em;
+  border: 2px solid white;
+  border-radius: 1em;
+  margin: 1em;
+  overflow: hidden;
+}
+
+.poster {
+  height: 20em;
+  width: 100%;
+  cursor: pointer;
 }
 
 .movie h1 {
   font-size: 1em;
   font-weight: bold;
+  margin: 1em 0;
+}
+
+.movie span {
+  margin: 0.25em 0;
+}
+
+.movie h1,
+.movie span {
+  padding: 0 1em;
 }
 
 .movie-buttons {
@@ -46,22 +63,91 @@ body {
   align-items: center;
   width: 100%;
   margin: 1em 0 0 0;
+  padding: 0;
 }
 
 .edit-movie,
-.delete-movie {
+.delete-movie,
+.more-info {
   display: inline;
+  color: white;
   border: 1px solid white;
+  height: 2em;
   width: 100%;
   cursor: pointer;
 }
 
+.more-info {
+  background-color: green;
+}
+
+.edit-movie {
+  background-color: blue;
+}
+
+.delete-movie {
+  background-color: red;
+}
+
 input,
 select {
-  border: 1px solid white;
   padding: 0.25em 1em;
 }
 
 *::placeholder {
-  color: white;
+  color: gray;
+}
+
+/* modals */
+
+.container-add,
+.container-add * {
+  color: black;
+  background-color: white;
+}
+
+.container-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container-add input {
+  border: 1px solid black;
+  width: 100%;
+  margin: 0 0 1em 0;
+}
+
+.container-add #submit-movie {
+  display: none;
+}
+
+/* modal design not content */
+.modal-header {
+  background-color: white !important;
+}
+
+.btn-close {
+  border: 1px solid black;
+  transition: 200ms ease-in-out;
+}
+
+.btn-close:hover {
+  background-color: red;
+  fill: white !important;
+}
+
+.modal-header h5 {
+  color: black;
+  background-color: white;
+}
+
+.modal-body {
+  color: black;
+  background-color: white;
+}
+
+.modal-footer {
+  color: black;
+  background-color: white;
 }
