@@ -2,32 +2,58 @@
   background-color: #000;
   color: white;
   font-family: sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 
 .container-load {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 
 .container-movies {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
   border: 1px solid white;
 }
 
 .movie {
   display: flex;
   flex-direction: column;
+  width: 16em;
   border: 1px solid white;
+  margin: 0;
+  padding: 1em;
 }
 
 .movie h1 {
   font-size: 1em;
+  font-weight: bold;
+}
+
+.movie-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1em 0 0 0;
+}
+
+.edit-movie,
+.delete-movie {
+  display: inline;
+  border: 1px solid white;
+  width: 100%;
+  cursor: pointer;
 }
 
 input,

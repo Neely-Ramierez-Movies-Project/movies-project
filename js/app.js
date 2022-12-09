@@ -3,16 +3,17 @@
 
   const html = {
     divO: `<div class="movie">`,
-    h1TitleO: `<h1 class="title">`,
-    h1TitleC: `</h1>`,
-    spanDirectorO: `<span class="director">`,
-    spanDirectorC: `</span>`,
-    spanIdO: `<span class="id">`,
-    spanIdC: `</span>`,
-    spanGenreO: `<span class="genre">`,
-    spanGenreC: `</span>`,
-    spanRatingO: `<span class="rating">`,
-    spanRatingC: `</span>`,
+    titleO: `<h1 class="title">`,
+    titleC: `</h1>`,
+    directorO: `<span class="director">`,
+    directorC: `</span>`,
+    idO: `<span class="id">`,
+    idC: `</span>`,
+    genreO: `<span class="genre">`,
+    genreC: `</span>`,
+    ratingO: `<span class="rating">`,
+    ratingC: `</span>`,
+    buttons: `<div class="movie-buttons"><button class="edit-movie">Edit</button><button class="delete-movie">Delete</button></div>`,
     divC: `</div>`,
   };
 
@@ -21,9 +22,11 @@
   $(document).ready(function () {
     $(`.page-load`).html(`Loading`);
     $.get(url, function (data) {
-      $(`.page-load`).html(``);
+      console.log(data);
+      // make is to where the movies image is the shown from the name of the movie
+
       data.forEach(function (movie) {
-        $(`.container-movies`).append(`${html.divO}${html.h1TitleO}${movie.title}${html.h1TitleC}${html.spanDirectorO}${movie.director}${html.spanDirectorC}${html.spanIdO}${movie.id}${html.spanIdC}${html.spanGenreO}${movie.genre}${html.spanGenreC}${html.spanRatingO}${movie.rating}${html.spanRatingC}${html.divC}`);
+        $(`.container-movies`).append(`${html.divO}${html.titleO}${movie.title}${html.titleC}${html.directorO}${movie.director}${html.directorC}${html.idO}${movie.id}${html.idC}${html.genreO}${movie.genre}${html.genreC}${html.ratingO}${movie.rating}${html.ratingC}${html.buttons}${html.divC}`);
       });
       $(`.page-load`).html(`My First Movies App`);
       // * Allow users to add new movies
@@ -40,9 +43,15 @@
           id: $(`#id`).val(),
         };
         $.post(url, newMovie, function (data) {
-          $(`.container-movies`).append(`${html.divO}${html.h1TitleO}${data.title}${html.h1TitleC}${html.spanDirectorO}${data.director}${html.spanDirectorC}${html.spanIdO}${data.id}${html.spanIdC}${html.spanGenreO}${data.genre}${html.spanGenreC}${html.spanRatingO}${data.rating}${html.spanRatingC}${html.divC}`);
+          $(`.container-movies`).append(`${html.divO}${html.titleO}${data.title}${html.titleC}${html.directorO}${data.director}${html.directorC}${html.idO}${data.id}${html.idC}${html.genreO}${data.genre}${html.genreC}${html.ratingO}${data.rating}${html.ratingC}${html.divC}`);
         });
       });
     });
   });
 })();
+
+// ! {DELETE MOVIE} modal use "toggle between modals"
+
+// document.getElementById(`submit-movie`).addEventListener(`click`, function (event) {});
+
+// $(`#submit-movie`).hover((event) => {});
