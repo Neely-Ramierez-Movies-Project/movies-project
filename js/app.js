@@ -6,6 +6,7 @@
     $(`.page-load`).html(`Loading`);
     $(`.container-add`).hide();
     $.get(url, (data) => {
+      console.log(data);
       data.forEach((movie) => {
         $.get(`${moviePosterUrl}t=${movie.title}`, (data) => {
           const movieRating = () => {
@@ -42,7 +43,15 @@
           directorInfo();
           genreInfo();
           posterInfo();
-          $(`.container-movies`).append(`${html.divO}${html.posterO}${data.Poster}${html.posterC}${html.titleO}${movie.title}${html.titleC}${html.directorO}${movie.director}${html.directorC}${html.idO}${movie.id}${html.idC}${html.genreO}${movie.genre}${html.genreC}${html.ratingO}${movie.rating}${html.ratingC}${html.buttons}${html.divC}`);
+          $(`.container-movies`).append(`
+          ${html.divO}${html.posterO}${data.Poster}${html.posterC}
+          ${html.titleO}${movie.title}${html.titleC}
+          ${html.buttons}${html.divC}
+          `);
+          $(`.more-info`).click(() => {
+            $(`.modal-more-info`).modal(`show`);
+            $(`.modal-body`).append(`${html.directorO}${movie.director}${html.directorC}${html.idO}${movie.id}${html.idC}${html.genreO}${movie.genre}${html.genreC}${html.ratingO}${movie.rating}${html.ratingC}`);
+          });
           $(`.poster`).click(() => {
             window.open(`${data.Poster}`, `_blank`);
           });
@@ -81,6 +90,17 @@
   $(document).ready(() => {
     $(`#add-movie`).click(() => {
       $(`.container-add`).toggle();
+    });
+    // * search feature
+    $(`.form-control`).on(`keyup`, function () {
+      const value = $(this).val().toLowerCase();
+      $(`.container-movies div`).filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+    // .more-info open a modal with more info about the movie
+    $(`.more-info`).click(() => {
+      $(`.modal-more-info`).modal(`show`);
     });
   });
 })();
