@@ -209,6 +209,11 @@ select {
 }
 
 /* modal design not content */
+
+.modal {
+  margin-top: 10em;
+}
+
 .modal-header {
   background-color: white !important;
 }

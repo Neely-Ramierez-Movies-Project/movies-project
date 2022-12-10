@@ -7,6 +7,7 @@
     $(`.submit-button`).append(`${icon.search}`);
     $(`.page-load`).html(`Loading`);
     $(`.container-add`).hide();
+    $(`#exampleModalCenter`).append(addMovieModal);
     $.get(url, (data) => {
       console.log(data);
       data.forEach((movie) => {
