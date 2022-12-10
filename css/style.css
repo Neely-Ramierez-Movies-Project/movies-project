@@ -99,7 +99,8 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   width: 16em;
-  background-color: rgba(17 17 34/ 0.85);
+  background-color: rgba(17 17 34/ 0.75);
+  backdrop-filter: blur(5px);
   border: 2px solid white;
   border-radius: 1em;
   margin: 1em;
@@ -119,7 +120,6 @@ body {
   width: 100%;
   font-size: 1em;
   font-weight: bold;
-  backdrop-filter: blur(3px);
   padding: 0;
   margin: 1em 0;
 }
@@ -128,7 +128,6 @@ body {
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  backdrop-filter: blur(3px);
   /* display: none; */
   color: white;
   margin: 0.25em 0;

@@ -4,13 +4,13 @@ const html = {
   posterC: `">`,
   titleO: `<h1 class="title">`,
   titleC: `</h1>`,
-  directorO: `<span class="director"><strong>Director: </strong>`,
+  directorO: `<span class="director"><strong>Director:</strong>&nbsp;`,
   directorC: `</span>`,
-  idO: `<span class="id"><strong>ID: </strong>`,
+  idO: `<span class="id"><strong>ID:</strong>&nbsp;`,
   idC: `</span>`,
-  genreO: `<span class="genre"><strong>Genre: </strong>`,
+  genreO: `<span class="genre"><strong>Genre:</strong>&nbsp;`,
   genreC: `</span>`,
-  ratingO: `<span class="rating"><strong>Rating: </strong> `,
+  ratingO: `<span class="rating"><strong>Rating:</strong>&nbsp;`,
   ratingC: `</span>`,
   buttons: `
     <div class="movie-buttons">
@@ -168,16 +168,17 @@ const navbar = `
   </div>
 </div>`;
 
-const addMovieModal = `      <div class="modal-dialog">
-<div class="modal-content">
-  <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-  </div>
-  <div class="modal-body">...</div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary">Save changes</button>
-  </div>
-</div>
-</div>`;
+const addMovieModal = `
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">...</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>`;
