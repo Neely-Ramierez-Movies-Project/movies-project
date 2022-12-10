@@ -158,7 +158,7 @@ const navbar = `
         <a class="nav-link active" aria-current="page" href="#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#deleteMovieModal">Add Movie</a>
+        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#addMovieModal">Add Movie</a>
       </li>
     </ul>
     <form class="d-flex">
@@ -172,13 +172,41 @@ const addMovieModal = `
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add a Movie!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">...</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+      <div class="modal-body">
+      <div class="container-add">
+        <form action="">
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="Enter a movie name" />
+
+          <label for="id">ID</label>
+          <input type="text" id="id" placeholder="Please enter a number" />
+
+          <label for="director">Director</label>
+          <input type="text" id="director" placeholder="Directors name" />
+
+          <label for="rating">Genre</label>
+          <input type="text" id="genre" placeholder="Enter Genre" />
+
+          <label for="genre">Rating</label>
+          <br />
+          <select name="rating" id="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <input type="submit" id="submit-movie" value="Submit" />
+        </form>
       </div>
-    </div>`;
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary" id="modal-submit-movie">Save changes</button>
+    </div>
+  </div>
+</div>
+    `;

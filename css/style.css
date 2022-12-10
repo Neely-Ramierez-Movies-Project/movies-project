@@ -110,6 +110,7 @@ body {
 .poster {
   height: 20em;
   width: 100%;
+  border-bottom: 1px solid white;
   cursor: pointer;
 }
 
@@ -127,6 +128,7 @@ body {
 .movie span {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   /* display: none; */
   color: white;
