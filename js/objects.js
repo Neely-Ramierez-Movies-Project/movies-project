@@ -14,12 +14,15 @@ const html = {
   ratingC: `</span>`,
   buttons: `
     <div class="movie-buttons">
-      <button class="more-info" data-bs-toggle="more-info" href="#more-info" role="button">More Info</button>
+      
       <button class="edit-movie">Edit</button>
       <button class="delete-movie" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete</button>
     </div>`,
   divC: `</div>`,
 };
+
+// TODO: Try and get this to work...
+// <button class="more-info" data-bs-toggle="more-info" href="#more-info" role="button">More Info</button>
 
 const rating = {
   one: `
