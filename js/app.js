@@ -1,13 +1,6 @@
 (() => {
-  const url = "https://codeup-json-server.glitch.me/movies";
-  const moviePosterUrl = `http://www.omdbapi.com/?apikey=${movieKey}&`;
   $(document).ready(() => {
-    $(`nav`).append(navbar);
-    $(`.navbar-brand`).append(icon.popcorn);
-    $(`.submit-button`).append(`${icon.search}`);
-    $(`.page-load`).html(`Loading`);
-    $(`.container-add`).hide();
-    $(`#addMovieModal`).append(addMovieModal);
+    pageLoad();
     $.get(url, (data) => {
       console.log(data);
       data.forEach((movie) => {
@@ -109,6 +102,7 @@
       const value = $(this).val().toLowerCase();
       $(`.container-movies div`).filter(function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        $(`.movie-buttons`).show();
       });
     });
     //   // .more-info open a modal with more info about the movie
@@ -116,4 +110,5 @@
     //     $(`.modal-more-info`).modal(`show`);
     //   });
   });
+  $(`footer`).append(footer);
 })();
