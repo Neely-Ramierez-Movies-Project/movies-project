@@ -117,7 +117,7 @@ const icon = {
 };
 
 const html = {
-  divO: `<div class="movie d-flex flex-column justify-content-between align-items-start">`,
+  divO: `<div class="movie d-flex flex-column justify-content-between align-items-start" id="movie">`,
   posterO: `<img class="poster width100 flex-wrap" src="`,
   posterC: `">`,
   titleO: `<h1 class="title d-flex justify-content-center align-items-center width100 flex-wrap">`,
@@ -171,7 +171,7 @@ const navbar = `
       </li>
     </ul>
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      <input class="form-control me-2" id="form-control" type="search" placeholder="Search" aria-label="Search" />
       <button class="submit-button" type="submit"></button>
     </form>
   </div>
