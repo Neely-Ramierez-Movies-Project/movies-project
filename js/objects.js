@@ -1,6 +1,7 @@
+`use strict`;
+
 const url = "https://flawless-north-caution.glitch.me/movies";
 const moviePosterUrl = `http://www.omdbapi.com/?apikey=${movieKey}&`;
-
 const rating = {
   one: `
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -115,46 +116,30 @@ const icon = {
         <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
       </svg>`,
 };
-
 const html = {
-  divO: `<div class="movie d-flex flex-column justify-content-between align-items-start" id="movie">`,
-  posterO: `<img class="poster width100 flex-wrap" src="`,
+  divO: `<div class="movie" id="movie">`,
+  posterO: `<img class="poster" src="`,
   posterC: `">`,
-  titleO: `<h1 class="title d-flex justify-content-center align-items-center width100 flex-wrap">`,
+  titleO: `<h1 class="title">`,
   titleC: `</h1>`,
-  directorO: `<span class="director flex-wrap"><strong>Director:</strong>&nbsp;`,
-  directorC: `</span>`,
-  idO: `<span class="id d-flex width100 flex-wrap"><strong>ID:</strong>&nbsp;`,
-  idC: `</span>`,
-  genreO: `<span class="genre d-flex width100 flex-wrap"><strong>Genre:</strong>`,
-  genreC: `</span>`,
-  ratingO: `<span class="rating d-flex align-items-center width100 flex-wrap"><strong>Rating:</strong>&nbsp;`,
-  ratingC: `</span>`,
+  directorO: `<div class="director"><strong class="strong">Director:</strong>&nbsp;`,
+  directorC: `</div>`,
+  idO: `<div class="movie-id"><span class="strong">ID:</span></span>&nbsp;<span class="id-number">`,
+  idC: `</span></div>`,
+
+  genreO: `<div class="genre"><strong>Genre:&nbsp;</strong>`,
+  genreC: `</div>`,
+  
+  ratingO: `<div class="rating"><strong>Rating:</strong>&nbsp;`,
+  ratingC: `</div>`,
   buttons: `
-    <div class="movie-buttons d-flex justify-content-center align-items-center width100">
-      
+    <div class="movie-buttons">
       <button class="edit-movie d-flex justify-content-center align-items-center width100">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
-      <button class="delete-movie d-flex justify-content-center align-items-center width100" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
+      <button class="delete-movie" id="delete-movie" >Delete&nbsp&nbsp&nbsp${icon.delete}</button>
     </div>`,
   divC: `</div>`,
 };
-const movieModal = {
-  header: `
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">`,
-  titleO: `        <h5 class="modal-title" id="exampleModalLabel">`,
-  titleC: `        </h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>`,
-  bodyO: `      <div class="modal-body">`,
-  bodyC: `      </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>`,
-};
+
 const navbar = `  
 <div class="container-fluid">
   <a class="navbar-brand" href="#"></a>
@@ -176,7 +161,6 @@ const navbar = `
     </form>
   </div>
 </div>`;
-
 const addMovieModal = `
   <div class="modal-dialog">
     <div class="modal-content">
@@ -196,18 +180,12 @@ const addMovieModal = `
           <label for="director">Director</label>
           <input class="width100" type="text" id="director" placeholder="Directors name" />
 
-          <label for="rating">Genre</label>
+          <label for="genre">Genre</label>
           <input class="width100" type="text" id="genre" placeholder="Enter Genre" />
 
-          <label for="genre">Rating</label>
           <br />
-          <select name="rating" id="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <label for="rating">Rating</label>
+          <input class="width100" type="text" id="rating" placeholder="Enter Rating 1-5" />
           <input type="submit" id="submit-movie" value="Submit" />
         </form>
       </div>
@@ -219,6 +197,7 @@ const addMovieModal = `
   </div>
 </div>
     `;
+const deleteMovieModal = ``
 const footer = `
   <div class="col-md-4 d-flex align-items-center">
     <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">

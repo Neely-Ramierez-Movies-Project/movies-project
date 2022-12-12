@@ -53,12 +53,21 @@
           $(`.container-movies`).append(`
           ${html.divO}${html.posterO}${data.Poster}${html.posterC}
           ${html.titleO}${movie.title}${html.titleC}
-          ${html.idO}${movie.id}${html.idC}${html.directorO}${movie.director}${html.directorC}${html.genreO}${movie.genre}${html.genreC}${html.ratingO}${movie.rating}${html.ratingC}
+          ${html.idO}${movie.id}${html.idC}
+          ${html.directorO}${movie.director}${html.directorC}
+          ${html.genreO}${movie.genre}${html.genreC}
+          ${html.ratingO}${movie.rating}${html.ratingC}
           ${html.buttons}${html.divC}
           `);
           // * This is safe. Only shows the image for the movie poster that was clicked on
           $(`.poster`).click(() => {
             window.open(`${data.Poster}`, `_blank`);
+          });
+          $(`.delete-movie`).click((event) => {
+            const movieId = $(event.target).parent(`.movie`).find(`#id`).text();
+            // this should bring up the modal to confirm if the user wants to delete the movie
+            // the modal should show the movie title for only the movie that the delete button was clicked on and should not show the movie title for any other movie
+            console.log(movieId);
           });
         });
       });
@@ -78,12 +87,14 @@
           $(`.container-movies`).append(`
           ${html.divO}${html.posterO}${data.Poster}${html.posterC}
           ${html.titleO}${movie.title}${html.titleC}
-          ${html.idO}${movie.id}${html.idC}${html.directorO}${movie.director}${html.directorC}${html.genreO}${movie.genre}${html.genreC}${html.ratingO}${movie.rating}${html.ratingC}
+          ${html.idO}${movie.id}${html.idC}
+          ${html.directorO}${movie.director}${html.directorC}
+          ${html.genreO}${movie.genre}${html.genreC}
+          ${html.ratingO}${movie.rating}${html.ratingC}
           ${html.buttons}${html.divC}
           `);
         });
       });
-      // * Allow users to delete movies
     });
   });
   $(document).ready(() => {
