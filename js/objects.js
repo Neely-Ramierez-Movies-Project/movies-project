@@ -114,7 +114,7 @@ const html = {
   buttons: `
     <div class="movie-buttons">
       <button class="edit-movie" data-bs-toggle="modal" data-bs-target="#editMovieModal">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
-      <button class="delete-movie" id="delete-movie" >Delete&nbsp&nbsp&nbsp${icon.delete}</button>
+      <button class="delete-movie">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
     </div>`,
   divC: `</div>`,
 };
