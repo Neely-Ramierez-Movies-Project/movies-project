@@ -69,12 +69,10 @@ body {
 /* loading */
 
 .container-load {
-  align-items: center;
   padding-top: 1em;
 }
 
 .page-load {
-  align-items: center;
   height: 2em;
   text-shadow: 0 0 1em black;
   background: radial-gradient(#000, rgba(0 0 0/0.75), rgba(0 0 0/ 0.5), rgba(0 0 0 / 0));
@@ -89,12 +87,10 @@ body {
 /* content */
 
 .container-movies {
-  align-items: stretch;
   flex-wrap: wrap;
 }
 
 .movie {
-  align-items: flex-start;
   width: 16em;
   background-color: rgba(17 17 34/ 0.75);
   backdrop-filter: blur(5px);
@@ -116,7 +112,6 @@ body {
 }
 
 .title {
-  align-items: center;
   font-size: 1em;
   font-weight: bold;
   padding: 0;
@@ -134,12 +129,7 @@ body {
   padding: 0 1em;
 }
 
-.rating {
-  align-items: center;
-}
-
 .movie-buttons {
-  align-items: center;
   margin-top: 0.5em;
   overflow: hidden;
 }
@@ -147,7 +137,6 @@ body {
 .edit-movie,
 .delete-movie,
 .more-info {
-  align-items: center;
   height: 2em;
   color: white;
   font-weight: bold;
