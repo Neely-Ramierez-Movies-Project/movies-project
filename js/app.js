@@ -144,8 +144,6 @@
       });
     });
   });
-
-  // make a function that will get the movie data from the server and will display the movie data on the page
   function getMovieData() {
     $.get(url, (data) => {
       console.log(data);
