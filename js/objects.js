@@ -117,24 +117,24 @@ const icon = {
 };
 
 const html = {
-  divO: `<div class="movie">`,
+  divO: `<div class="movie d-flex">`,
   posterO: `<img class="poster width100" src="`,
   posterC: `">`,
-  titleO: `<h1 class="title width100">`,
+  titleO: `<h1 class="title d-flex width100">`,
   titleC: `</h1>`,
   directorO: `<span class="director"><strong>Director:</strong>&nbsp;`,
   directorC: `</span>`,
-  idO: `<span class="id width100"><strong>ID:</strong>&nbsp;`,
+  idO: `<span class="id d-flex width100"><strong>ID:</strong>&nbsp;`,
   idC: `</span>`,
-  genreO: `<span class="genre width100"><strong>Genre:</strong>`,
+  genreO: `<span class="genre d-flex width100"><strong>Genre:</strong>`,
   genreC: `</span>`,
-  ratingO: `<span class="rating width100"><strong>Rating:</strong>&nbsp;`,
+  ratingO: `<span class="rating d-flex width100"><strong>Rating:</strong>&nbsp;`,
   ratingC: `</span>`,
   buttons: `
-    <div class="movie-buttons width100">
+    <div class="movie-buttons d-flex width100">
       
-      <button class="edit-movie width100">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
-      <button class="delete-movie width100" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
+      <button class="edit-movie d-flex width100">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
+      <button class="delete-movie d-flex width100" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
     </div>`,
   divC: `</div>`,
 };
@@ -185,7 +185,7 @@ const addMovieModal = `
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div class="container-add width100">
+      <div class="container-add d-flex width100">
         <form action="">
           <label for="title">Title</label>
           <input class="width100" type="text" id="title" placeholder="Enter a movie name" />

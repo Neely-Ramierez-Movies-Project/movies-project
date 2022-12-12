@@ -69,14 +69,12 @@ body {
 /* loading */
 
 .container-load {
-  display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 1em;
 }
 
 .page-load {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 2em;
@@ -93,14 +91,12 @@ body {
 /* content */
 
 .container-movies {
-  display: flex;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
 }
 
 .movie {
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
@@ -125,7 +121,6 @@ body {
 }
 
 .title {
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1em;
@@ -135,7 +130,6 @@ body {
 }
 
 .movie span {
-  display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   color: white;
@@ -148,13 +142,11 @@ body {
 }
 
 .rating {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .movie-buttons {
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 0.5em;
@@ -164,7 +156,6 @@ body {
 .edit-movie,
 .delete-movie,
 .more-info {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 2em;
@@ -222,7 +213,6 @@ select {
 }
 
 .container-add {
-  display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
