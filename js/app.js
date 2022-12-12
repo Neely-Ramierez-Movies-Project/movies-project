@@ -20,7 +20,7 @@
 
             const directorInfo = () => {
               if (movie.director === undefined) {
-                movie.director = `Needs updated`;
+                movie.director = `N/A`;
               }
             };
             const genreInfo = () => {
@@ -64,6 +64,7 @@
       });
       $(`.page-load`).html(`The Movies App`);
       $(`.container-add`).show();
+      $(`.hidden`).removeClass(`hidden`);
       // ! below is not safe due to glitch server issues
       // * Allow users to add new movies
       // * Create a form for adding a new movie that has fields for the movie's title and rating
@@ -94,21 +95,16 @@
   });
   // TODO: add movie
   $(document).ready(() => {
-    //   $(`#add-movie`).click(() => {
-    //     $(`.container-add`).toggle();
-    //   });
-    //   // * search feature
+    // * search feature
     $(`.form-control`).on(`keyup`, function () {
       const value = $(this).val().toLowerCase();
-      $(`.container-movies div`).filter(function () {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-        $(`.movie-buttons`).show();
-      });
+      const filterMovies = () => {
+        $(`.container-movies div`).filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+          $(`.movie-buttons`).show();
+        });
+      };
+      filterMovies();
     });
-    //   // .more-info open a modal with more info about the movie
-    //   $(`.more-info`).click(() => {
-    //     $(`.modal-more-info`).modal(`show`);
-    //   });
   });
-  $(`footer`).append(footer);
 })();

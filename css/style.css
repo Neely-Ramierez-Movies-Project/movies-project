@@ -28,7 +28,12 @@ body {
   z-index: 99999;
 }
 
+.navbar-brand {
+  filter: drop-shadow(0 0 0.125em white);
+}
+
 .nav-link {
+  text-shadow: 0 0 0.5em black;
   cursor: pointer;
 }
 
@@ -79,9 +84,14 @@ body {
   align-items: center;
   height: 2em;
   width: 100%;
+  text-shadow: 0 0 1em black;
   background: radial-gradient(#000, rgba(0 0 0/0.75), rgba(0 0 0/ 0.5), rgba(0 0 0 / 0));
   backdrop-filter: blur(5px);
   margin: 1em 0;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /* content */
@@ -135,7 +145,6 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
-  /* display: none; */
   color: white;
   margin: 0.25em 0;
 }
@@ -170,6 +179,7 @@ body {
   width: 100%;
   color: white;
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0 0 0 / 1);
   border: 1px solid white;
   overflow: hidden;
   cursor: pointer;
@@ -181,10 +191,16 @@ body {
 
 .edit-movie {
   background: linear-gradient(rgba(150 150 255 / 1), blue, rgba(0 0 255 / 0.75), rgba(0 0 255 / 0.5), rgba(0 0 255 / 0.25));
+  filter: drop-shadow(1px 1px 1px rgba(0 0 255 / 0.5));
 }
 
 .delete-movie {
   background: linear-gradient(rgba(255 150 150 / 1), red, rgba(255 0 0 / 0.75), rgba(255 0 0 / 0.5), rgba(255 0 0 / 0.25));
+  filter: drop-shadow(1px 1px 1px rgba(255 0 0 / 0.5));
+}
+
+.bi {
+  filter: drop-shadow(2px 2px 4px rgba(0 0 0 / 1));
 }
 
 .edit-movie:hover,
@@ -269,10 +285,19 @@ footer {
   filter: drop-shadow(0 0 0.125em rgba(255 255 255 / 0.125));
 }
 
-footer svg {
-  fill: white !important;
-  filter: drop-shadow(0 0 0.125em white);
+.bi-twitter {
+  fill: #1c9cea !important;
 }
+
+.bi-facebook {
+  fill: blue !important;
+}
+
+.bi-instagram {
+  fill: orangered !important;
+}
+
+/* media queries */
 
 @media screen and (max-width: 425px) {
   .page-load {
