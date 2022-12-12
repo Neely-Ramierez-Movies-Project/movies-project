@@ -118,23 +118,23 @@ const icon = {
 
 const html = {
   divO: `<div class="movie">`,
-  posterO: `<img class="poster" src="`,
+  posterO: `<img class="poster width100" src="`,
   posterC: `">`,
-  titleO: `<h1 class="title">`,
+  titleO: `<h1 class="title width100">`,
   titleC: `</h1>`,
   directorO: `<span class="director"><strong>Director:</strong>&nbsp;`,
   directorC: `</span>`,
-  idO: `<span class="id"><strong>ID:</strong>&nbsp;`,
+  idO: `<span class="id width100"><strong>ID:</strong>&nbsp;`,
   idC: `</span>`,
-  genreO: `<span class="genre"><strong>Genre:</strong>`,
+  genreO: `<span class="genre width100"><strong>Genre:</strong>`,
   genreC: `</span>`,
-  ratingO: `<span class="rating"><strong>Rating:</strong>&nbsp;`,
+  ratingO: `<span class="rating width100"><strong>Rating:</strong>&nbsp;`,
   ratingC: `</span>`,
   buttons: `
-    <div class="movie-buttons">
+    <div class="movie-buttons width100">
       
-      <button class="edit-movie">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
-      <button class="delete-movie" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
+      <button class="edit-movie width100">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
+      <button class="delete-movie width100" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
     </div>`,
   divC: `</div>`,
 };
@@ -185,19 +185,19 @@ const addMovieModal = `
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div class="container-add">
+      <div class="container-add width100">
         <form action="">
           <label for="title">Title</label>
-          <input type="text" id="title" placeholder="Enter a movie name" />
+          <input class="width100" type="text" id="title" placeholder="Enter a movie name" />
 
           <label for="id">ID</label>
-          <input type="text" id="id" placeholder="Please enter a number" />
+          <input class="width100" type="text" id="id" placeholder="Please enter a number" />
 
           <label for="director">Director</label>
-          <input type="text" id="director" placeholder="Directors name" />
+          <input class="width100" type="text" id="director" placeholder="Directors name" />
 
           <label for="rating">Genre</label>
-          <input type="text" id="genre" placeholder="Enter Genre" />
+          <input class="width100" type="text" id="genre" placeholder="Enter Genre" />
 
           <label for="genre">Rating</label>
           <br />
