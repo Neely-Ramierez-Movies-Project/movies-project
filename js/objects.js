@@ -2,6 +2,7 @@
 
 const url = "https://flawless-north-caution.glitch.me/movies";
 const moviePosterUrl = `http://www.omdbapi.com/?apikey=${movieKey}&`;
+let selectedID;
 const rating = {
   one: `
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -195,7 +196,7 @@ const addMovieModal = `
   </div>
 </div>
     `;
-const deleteMovieModal = ``
+const deleteMovieModal = ``;
 const footer = `
   <div class="col-md-4 d-flex align-items-center">
     <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
