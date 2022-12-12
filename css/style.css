@@ -94,7 +94,6 @@ body {
 }
 
 .movie {
-  flex-direction: column;
   align-items: flex-start;
   width: 16em;
   background-color: rgba(17 17 34/ 0.75);
@@ -201,10 +200,6 @@ select {
 .container-add * {
   color: black;
   background-color: white;
-}
-
-.container-add {
-  flex-direction: column;
 }
 
 .container-add input {

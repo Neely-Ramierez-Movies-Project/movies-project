@@ -117,7 +117,7 @@ const icon = {
 };
 
 const html = {
-  divO: `<div class="movie d-flex justify-content-between">`,
+  divO: `<div class="movie d-flex flex-column justify-content-between">`,
   posterO: `<img class="poster width100" src="`,
   posterC: `">`,
   titleO: `<h1 class="title d-flex justify-content-center width100">`,
@@ -185,7 +185,7 @@ const addMovieModal = `
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div class="container-add d-flex justify-content-start width100">
+      <div class="container-add d-flex flex-column justify-content-start width100">
         <form action="">
           <label for="title">Title</label>
           <input class="width100" type="text" id="title" placeholder="Enter a movie name" />
