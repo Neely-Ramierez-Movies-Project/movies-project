@@ -128,7 +128,8 @@
           ${html.ratingO}${movie.rating}${html.ratingC}
           ${html.buttons}${html.divC}
           `);
-        location.reload();
+        $(`.container-movies`).empty();
+        getMovieData();
       });
     });
   });
@@ -143,4 +144,69 @@
       });
     });
   });
+
+  // make a function that will get the movie data from the server and will display the movie data on the page
+  function getMovieData() {
+    $.get(url, (data) => {
+      console.log(data);
+      data.forEach((movie) => {
+        $.get(`${moviePosterUrl}t=${movie.title}`, (data) => {
+          $(`.container-movies`).append(`
+          ${html.divO}${html.posterO}${data.Poster}${html.posterC}
+          ${html.titleO}${movie.title}${html.titleC}
+          ${html.idO}${movie.id}${html.idC}
+          ${html.directorO}${movie.director}${html.directorC}
+          ${html.genreO}${movie.genre}${html.genreC}
+          ${html.ratingO}${movie.rating}${html.ratingC}
+          ${html.buttons}${html.divC}
+          `);
+          function movieInfo() {
+            const posterInfo = () => {
+              if (data.Response === `False`) {
+                data.Poster = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjQk5myChutYz0rHuGWaDlhcGMzOCABLt_LA&usqp=CAU`;
+              }
+            };
+
+            const movieTitle = () => {
+              if (movie.title === undefined || movie.title === null || movie.title === ``) {
+                movie.title = `N/A`;
+              }
+            };
+
+            const directorInfo = () => {
+              if (movie.director === undefined) {
+                movie.director = `N/A`;
+              }
+            };
+            const genreInfo = () => {
+              if (movie.genre === undefined || movie.genre === null || movie.genre === ``) {
+                movie.genre = `N/A`;
+              }
+            };
+            const movieRating = () => {
+              if (movie.rating === 1) {
+                movie.rating = rating.one;
+              } else if (movie.rating === `2`) {
+                movie.rating = rating.two;
+              } else if (movie.rating === `3`) {
+                movie.rating = rating.three;
+              } else if (movie.rating === `4`) {
+                movie.rating = rating.four;
+              } else if (movie.rating === `5`) {
+                movie.rating = rating.five;
+              } else {
+                movie.rating = `N/A`;
+              }
+            };
+            posterInfo();
+            movieTitle();
+            directorInfo();
+            genreInfo();
+            movieRating();
+          }
+          movieInfo();
+        });
+      });
+    });
+  }
 })();
