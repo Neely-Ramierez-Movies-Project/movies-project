@@ -117,10 +117,10 @@ const icon = {
 };
 
 const html = {
-  divO: `<div class="movie d-flex">`,
+  divO: `<div class="movie d-flex justify-content-between">`,
   posterO: `<img class="poster width100" src="`,
   posterC: `">`,
-  titleO: `<h1 class="title d-flex width100">`,
+  titleO: `<h1 class="title d-flex justify-content-center width100">`,
   titleC: `</h1>`,
   directorO: `<span class="director"><strong>Director:</strong>&nbsp;`,
   directorC: `</span>`,
@@ -131,10 +131,10 @@ const html = {
   ratingO: `<span class="rating d-flex width100"><strong>Rating:</strong>&nbsp;`,
   ratingC: `</span>`,
   buttons: `
-    <div class="movie-buttons d-flex width100">
+    <div class="movie-buttons d-flex justify-content-center width100">
       
-      <button class="edit-movie d-flex width100">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
-      <button class="delete-movie d-flex width100" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
+      <button class="edit-movie d-flex justify-content-center width100">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
+      <button class="delete-movie d-flex justify-content-center width100" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Delete&nbsp&nbsp&nbsp${icon.delete}</button>
     </div>`,
   divC: `</div>`,
 };
@@ -185,7 +185,7 @@ const addMovieModal = `
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div class="container-add d-flex width100">
+      <div class="container-add d-flex justify-content-start width100">
         <form action="">
           <label for="title">Title</label>
           <input class="width100" type="text" id="title" placeholder="Enter a movie name" />

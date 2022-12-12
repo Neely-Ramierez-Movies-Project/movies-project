@@ -69,13 +69,11 @@ body {
 /* loading */
 
 .container-load {
-  justify-content: center;
   align-items: center;
   padding-top: 1em;
 }
 
 .page-load {
-  justify-content: center;
   align-items: center;
   height: 2em;
   text-shadow: 0 0 1em black;
@@ -91,14 +89,12 @@ body {
 /* content */
 
 .container-movies {
-  justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
 }
 
 .movie {
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
   width: 16em;
   background-color: rgba(17 17 34/ 0.75);
@@ -121,7 +117,6 @@ body {
 }
 
 .title {
-  justify-content: center;
   align-items: center;
   font-size: 1em;
   font-weight: bold;
@@ -130,7 +125,6 @@ body {
 }
 
 .movie span {
-  justify-content: flex-start;
   flex-wrap: wrap;
   color: white;
   margin: 0.25em 0;
@@ -142,12 +136,10 @@ body {
 }
 
 .rating {
-  justify-content: center;
   align-items: center;
 }
 
 .movie-buttons {
-  justify-content: center;
   align-items: center;
   margin-top: 0.5em;
   overflow: hidden;
@@ -156,7 +148,6 @@ body {
 .edit-movie,
 .delete-movie,
 .more-info {
-  justify-content: center;
   align-items: center;
   height: 2em;
   color: white;
@@ -214,7 +205,6 @@ select {
 
 .container-add {
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .container-add input {
