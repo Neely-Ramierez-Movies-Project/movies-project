@@ -64,10 +64,17 @@
             window.open(`${data.Poster}`, `_blank`);
           });
           $(`.delete-movie`).click((event) => {
-            const movieId = $(event.target).parent(`.movie`).find(`#id`).text();
-            // this should bring up the modal to confirm if the user wants to delete the movie
-            // the modal should show the movie title for only the movie that the delete button was clicked on and should not show the movie title for any other movie
-            console.log(movieId);
+            // find the .id-number of the .movie for the .delete-movie button that was clicked
+            const id = $(event.target).parent().find(`.id-number`).text();
+            // $.ajax({
+            //   url: `${url}/${id}`,
+            //   type: `DELETE`,
+            //   success: (result) => {
+            //     console.log(`Deleted movie with id: ${id}`);
+            //     $(event.target).parent().remove();
+            //   }
+            // });
+            console.log(`Deleted movie with id: ${id}`);
           });
         });
       });

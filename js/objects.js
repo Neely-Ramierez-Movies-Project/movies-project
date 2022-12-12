@@ -126,10 +126,8 @@ const html = {
   directorC: `</div>`,
   idO: `<div class="movie-id"><span class="strong">ID:</span></span>&nbsp;<span class="id-number">`,
   idC: `</span></div>`,
-
   genreO: `<div class="genre"><strong>Genre:&nbsp;</strong>`,
   genreC: `</div>`,
-  
   ratingO: `<div class="rating"><strong>Rating:</strong>&nbsp;`,
   ratingC: `</div>`,
   buttons: `
