@@ -15,9 +15,39 @@
     <div class="container-load d-flex justify-content-center align-items-center">
       <h1 class="page-load d-flex justify-content-center align-items-center"></h1>
     </div>
-    <div class="container-movies d-flex justify-content-center align-items-stretch flex-wrap"></div>
+    <div class="container-movies d-flex justify-content-center align-items-stretch flex-wrap" id="container-movies"></div>
     <!-- Add Movie Modal -->
     <div class="modal fade" id="addMovieModal" tabindex="-1" aria-labelledby="addMovie" aria-hidden="true"></div>
+    <!-- Delete Movie Modal -->
+    <div class="modal fade" id="deleteMovieModal" aria-hidden="true" aria-labelledby="deleteMovieModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">Delete Movie</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Are you sure you want to delete this movie?</div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">Delete Movie</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Are you sure you want to delete this movie? This is irreversible.</div>
+          <div class="modal-footer">
+            <button class="btn btn-danger" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-primary" data-bs-toggle="modal" href="#deleteMovieModal" role="button" id="deleteModalOpen">Delete modal button</a>
     <!-- footer -->
     <footer class="hidden d-flex flex-wrap justify-content-between align-items-center py-3 border-top"></footer>
     <!-- scripts -->
