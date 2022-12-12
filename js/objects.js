@@ -133,7 +133,7 @@ const html = {
   ratingC: `</div>`,
   buttons: `
     <div class="movie-buttons">
-      <button class="edit-movie d-flex justify-content-center align-items-center width100">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
+      <button class="edit-movie" data-bs-toggle="modal" data-bs-target="#editMovieModal">Edit&nbsp&nbsp&nbsp&nbsp${icon.edit}</button>
       <button class="delete-movie" id="delete-movie" >Delete&nbsp&nbsp&nbsp${icon.delete}</button>
     </div>`,
   divC: `</div>`,
@@ -196,6 +196,42 @@ const addMovieModal = `
   </div>
 </div>
     `;
+const editMovieModal = `
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="addMovieModal">Edit a Movie!</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <div class="container-add d-flex flex-column justify-content-start width100">
+      <form action="">
+        <label for="title">Title</label>
+        <input class="width100" type="text" id="edit-title" placeholder="Enter a movie name" />
+
+        <label for="id">ID</label>
+        <input class="width100" type="text" id="edit-id" placeholder="Please enter a number" />
+
+        <label for="director">Director</label>
+        <input class="width100" type="text" id="edit-director" placeholder="Directors name" />
+
+        <label for="genre">Genre</label>
+        <input class="width100" type="text" id="edit-genre" placeholder="Enter Genre" />
+
+        <br />
+        <label for="rating">Rating</label>
+        <input class="width100" type="text" id="edit-rating" placeholder="Enter Rating 1-5" />
+        <input type="submit" id="submit-movie" value="Submit" />
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary" id="edit-submit-movie">Save changes</button>
+  </div>
+</div>
+</div>
+  `;
 const deleteMovieModal = ``;
 const footer = `
   <div class="col-md-4 d-flex align-items-center">
@@ -229,5 +265,6 @@ const pageLoad = () => {
   $(`.page-load`).html(`Loading`);
   $(`.container-add`).hide();
   $(`#addMovieModal`).append(addMovieModal);
+  $(`#editMovieModal`).append(editMovieModal);
   $(`footer`).html(footer);
 };

@@ -31,13 +31,13 @@
           const movieRating = () => {
             if (movie.rating === 1) {
               movie.rating = rating.one;
-            } else if (movie.rating === 2) {
+            } else if (movie.rating === `2`) {
               movie.rating = rating.two;
-            } else if (movie.rating === 3) {
+            } else if (movie.rating === `3`) {
               movie.rating = rating.three;
-            } else if (movie.rating === 4) {
+            } else if (movie.rating === `4`) {
               movie.rating = rating.four;
-            } else if (movie.rating === 5) {
+            } else if (movie.rating === `5`) {
               movie.rating = rating.five;
             } else {
               movie.rating = `N/A`;
@@ -63,6 +63,34 @@
         $(`.poster`).click(() => {
           window.open(`${data.Poster}`, `_blank`);
         });
+        $(`.edit-movie`).click((e) => {
+          let movieID = $(e.target).parent().parent().find(`.id-number`).text();
+          console.log(movieID);
+          $.get(`${url}/${movieID}`, (data) => {
+            console.log(data);
+            $(`#edit-title`).val(data.title);
+            $(`#edit-director`).val(data.director);
+            $(`#edit-genre`).val(data.genre);
+            $(`#edit-rating`).val(data.rating);
+            $(`#edit-submit-movie`).click(() => {
+              const movie = {
+                title: $(`#edit-title`).val(),
+                director: $(`#edit-director`).val(),
+                genre: $(`#edit-genre`).val(),
+                rating: $(`#edit-rating`).val(),
+              };
+              // send this to the server as a edit request
+              $.ajax({
+                url: `${url}/${movieID}`,
+                type: `PUT`,
+                data: movie,
+                success: (result) => {
+                  console.log(`Edited successfully`);
+                },
+              });
+            });
+          });
+        });
         $(`.delete-movie`).click((e) => {
           let movieID = $(e.target).parent().parent().find(`.id-number`).text();
           console.log(movieID);
@@ -74,7 +102,7 @@
             },
             complete: () => {
               location.reload();
-            }
+            },
           });
         });
       });
@@ -83,7 +111,6 @@
     $(`.container-add`).show();
     $(`.hidden`).removeClass(`hidden`);
     $(`#modal-submit-movie`).click(() => {
-      // when the user clicks on the submit button, the movie should be added to the database
       const movie = {
         title: $(`#title`).val(),
         director: $(`#director`).val(),
@@ -101,6 +128,7 @@
           ${html.ratingO}${movie.rating}${html.ratingC}
           ${html.buttons}${html.divC}
           `);
+        location.reload();
       });
     });
   });
