@@ -93,7 +93,6 @@
       // });
     });
   });
-  // TODO: add movie
   $(document).ready(() => {
     // * search feature
     $(`.form-control`).on(`keyup`, function () {

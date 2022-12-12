@@ -1,4 +1,4 @@
-const url = "https://codeup-json-server.glitch.me/movies";
+const url = "https://flawless-north-caution.glitch.me/movies";
 const moviePosterUrl = `http://www.omdbapi.com/?apikey=${movieKey}&`;
 
 const rating = {
