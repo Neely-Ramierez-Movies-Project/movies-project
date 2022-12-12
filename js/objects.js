@@ -118,17 +118,17 @@ const icon = {
 
 const html = {
   divO: `<div class="movie d-flex flex-column justify-content-between align-items-start">`,
-  posterO: `<img class="poster width100" src="`,
+  posterO: `<img class="poster width100 flex-wrap" src="`,
   posterC: `">`,
-  titleO: `<h1 class="title d-flex justify-content-center align-items-center width100">`,
+  titleO: `<h1 class="title d-flex justify-content-center align-items-center width100 flex-wrap">`,
   titleC: `</h1>`,
-  directorO: `<span class="director"><strong>Director:</strong>&nbsp;`,
+  directorO: `<span class="director flex-wrap"><strong>Director:</strong>&nbsp;`,
   directorC: `</span>`,
-  idO: `<span class="id d-flex width100"><strong>ID:</strong>&nbsp;`,
+  idO: `<span class="id d-flex width100 flex-wrap"><strong>ID:</strong>&nbsp;`,
   idC: `</span>`,
-  genreO: `<span class="genre d-flex width100"><strong>Genre:</strong>`,
+  genreO: `<span class="genre d-flex width100 flex-wrap"><strong>Genre:</strong>`,
   genreC: `</span>`,
-  ratingO: `<span class="rating d-flex align-items-center width100"><strong>Rating:</strong>&nbsp;`,
+  ratingO: `<span class="rating d-flex align-items-center width100 flex-wrap"><strong>Rating:</strong>&nbsp;`,
   ratingC: `</span>`,
   buttons: `
     <div class="movie-buttons d-flex justify-content-center align-items-center width100">
