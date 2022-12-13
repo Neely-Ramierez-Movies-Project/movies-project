@@ -288,12 +288,11 @@ select {
 }
 
 .btn-close {
-  border: 1px solid #000;
   transition: 200ms ease-in-out;
 }
 
 .btn-close:hover {
-  background-color: #f00;
+  background-color: #f00 !important;
   fill: #fff !important;
 }
 
@@ -307,8 +306,32 @@ select {
 
 /* modal form */
 
+.modal-body {
+  border-top: 1px solid white !important;
+}
+
 .modal-body input {
   width: 100%;
+}
+
+.modal-header,
+.modal-header * {
+  color: #fff !important;
+  background-color: #666 !important;
+  border-bottom: white !important;
+}
+
+.modal-body,
+form,
+form label,
+.modal-footer {
+  color: white !important;
+  background-color: #212529 !important;
+}
+
+input {
+  color: white !important;
+  background-color: #121212 !important;
 }
 
 /* footer */

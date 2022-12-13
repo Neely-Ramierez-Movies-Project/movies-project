@@ -90,16 +90,6 @@
       console.log(data);
       data.forEach((movie) => {
         $.get(`${moviePosterUrl}t=${movie.title}`, (data) => {
-          $(`.container-movies`).append(`
-          ${html.divO}${html.posterO}${data.Poster}${html.posterC}
-          ${html.titleO}${movie.title}${html.titleC}
-          ${html.idO}${movie.id}${html.idC}
-          ${html.directorO}${movie.director}${html.directorC}
-          ${html.genreO}${movie.genre}${html.genreC}
-          ${html.ratingO}${movie.rating}${html.ratingC}
-          ${html.buttons}${html.divC}
-          `);
-
           function movieInfo() {
             const posterInfo = () => {
               if (data.Response === `False`) {
@@ -142,8 +132,16 @@
             genreInfo();
             movieRating();
           }
-
           movieInfo();
+          $(`.container-movies`).append(`
+          ${html.divO}${html.posterO}${data.Poster}${html.posterC}
+          ${html.titleO}${movie.title}${html.titleC}
+          ${html.idO}${movie.id}${html.idC}
+          ${html.directorO}${movie.director}${html.directorC}
+          ${html.genreO}${movie.genre}${html.genreC}
+          ${html.ratingO}${movie.rating}${html.ratingC}
+          ${html.buttons}${html.divC}
+          `);
         });
       });
     });
@@ -154,22 +152,23 @@
       let movieID = $(e.target).parent().parent().find(`.id-number`).text();
       let movieTitle = $(e.target).parent().parent().find(`.title`).text();
       $(`.modal-title`).text(`Edit ${movieTitle}`);
-      console.log(movieID);
+      console.log(`Title: ${movieTitle}`);
+      console.log(`ID: ${movieID}`);
       $.get(`${url}/${movieID}`, (data) => {
         $(`#edit-title`).val(data.title);
         $(`#edit-id`).val(data.id);
         $(`#edit-director`).val(data.director);
-        $(`#genre`).val(data.genre);
+        $(`#edit-genre`).val(data.genre);
         $(`#edit-rating`).val(data.rating);
       });
-      $(`#edit-submit-movie`).click(() => {
+      $(`#submit-edit`).click((e) => {
         e.preventDefault();
         const movie = {
-          title: $(`#title`).val(),
-          id: $(`#id`).val(),
-          director: $(`#director`).val(),
-          genre: $(`#genre`).val(),
-          rating: $(`#rating`).val(),
+          title: $(`#edit-title`).val(),
+          id: $(`#edit-id`).val(),
+          director: $(`#edit-director`).val(),
+          genre: $(`#edit-genre`).val(),
+          rating: $(`#edit-rating`).val(),
         };
         $.ajax({
           url: `${url}/${movieID}`,
@@ -179,8 +178,10 @@
             console.log(`Updated successfully`);
           },
         });
-        $(`.container-movies`).empty();
-        getMovieData();
+        $(`.container-movies`).html(``);
+        $(`.btn-close`).click((e) => {
+          getMovieData();
+        });
       });
     }
   });
@@ -200,7 +201,6 @@
     }
   });
 
-  // if a modal is open, the rest of the page is blurred
   $(`.modal`).on(`shown.bs.modal`, function () {
     $(`.container-movies`).addClass(`blur`);
   });
