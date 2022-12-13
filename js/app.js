@@ -1,7 +1,6 @@
 (() => {
   pageLoad();
   $.get(url, (data) => {
-    console.log(data);
     data.forEach((movie) => {
       $.get(`${moviePosterUrl}t=${movie.title}`, (data) => {
         function movieInfo() {
@@ -149,4 +148,63 @@
       });
     });
   }
+
+  $(`.container-movies`).click((e) => {
+    if ($(e.target).hasClass(`edit-movie`)) {
+      let movieID = $(e.target).parent().parent().find(`.id-number`).text();
+      let movieTitle = $(e.target).parent().parent().find(`.title`).text();
+      $(`.modal-title`).text(`Edit ${movieTitle}`);
+      console.log(movieID);
+      $.get(`${url}/${movieID}`, (data) => {
+        $(`#edit-title`).val(data.title);
+        $(`#edit-id`).val(data.id);
+        $(`#edit-director`).val(data.director);
+        $(`#genre`).val(data.genre);
+        $(`#edit-rating`).val(data.rating);
+      });
+      $(`#edit-submit-movie`).click(() => {
+        e.preventDefault();
+        const movie = {
+          title: $(`#title`).val(),
+          id: $(`#id`).val(),
+          director: $(`#director`).val(),
+          genre: $(`#genre`).val(),
+          rating: $(`#rating`).val(),
+        };
+        $.ajax({
+          url: `${url}/${movieID}`,
+          type: `PUT`,
+          data: movie,
+          success: (result) => {
+            console.log(`Updated successfully`);
+          },
+        });
+        $(`.container-movies`).empty();
+        getMovieData();
+      });
+    }
+  });
+
+  $(`.container-movies`).click((e) => {
+    if ($(e.target).hasClass(`delete-movie`)) {
+      let movieID = $(e.target).parent().parent().find(`.id-number`).text();
+      console.log(movieID);
+      $.ajax({
+        url: `${url}/${movieID}`,
+        type: `DELETE`,
+        success: (result) => {
+          console.log(`Deleted successfully`);
+        },
+      });
+      $(e.target).parent().parent().remove();
+    }
+  });
+
+  // if a modal is open, the rest of the page is blurred
+  $(`.modal`).on(`shown.bs.modal`, function () {
+    $(`.container-movies`).addClass(`blur`);
+  });
+  $(`.modal`).on(`hidden.bs.modal`, function () {
+    $(`.container-movies`).removeClass(`blur`);
+  });
 })();

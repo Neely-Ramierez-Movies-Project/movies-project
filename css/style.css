@@ -25,6 +25,7 @@ body {
 
 .navbar {
   position: fixed;
+  width: 100%;
   box-shadow: 0 0 1em #000;
   z-index: 99999;
 }
@@ -304,9 +305,18 @@ select {
   background-color: #fff;
 }
 
+/* modal form */
+
+.modal-body input {
+  width: 100%;
+}
+
 /* footer */
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: #000;
   box-shadow: 0 0 1em #000;
   margin-top: 2em;
@@ -326,8 +336,9 @@ footer {
 
 /* additional classes */
 
-.width100 {
-  width: 100%;
+.blur {
+  filter: blur(5px);
+  transition: 250ms ease-in-out;
 }
 
 /* media queries */
