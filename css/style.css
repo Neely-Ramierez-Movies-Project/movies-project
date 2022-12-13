@@ -95,6 +95,10 @@ body {
 
 /* content */
 
+.container-movies {
+  margin-bottom: 4em;
+}
+
 .movie {
   display: flex;
   flex-direction: column;
