@@ -25,6 +25,7 @@ body {
 
 .navbar {
   position: fixed;
+  width: 100%;
   box-shadow: 0 0 1em #000;
   z-index: 99999;
 }
@@ -93,6 +94,10 @@ body {
 }
 
 /* content */
+
+.container-movies {
+  margin-bottom: 4em;
+}
 
 .movie {
   display: flex;
@@ -287,12 +292,11 @@ select {
 }
 
 .btn-close {
-  border: 1px solid #000;
   transition: 200ms ease-in-out;
 }
 
 .btn-close:hover {
-  background-color: #f00;
+  background-color: #f00 !important;
   fill: #fff !important;
 }
 
@@ -304,9 +308,42 @@ select {
   background-color: #fff;
 }
 
+/* modal form */
+
+.modal-body {
+  border-top: 1px solid white !important;
+}
+
+.modal-body input {
+  width: 100%;
+}
+
+.modal-header,
+.modal-header * {
+  color: #fff !important;
+  background-color: #666 !important;
+  border-bottom: white !important;
+}
+
+.modal-body,
+form,
+form label,
+.modal-footer {
+  color: white !important;
+  background-color: #212529 !important;
+}
+
+input {
+  color: white !important;
+  background-color: #121212 !important;
+}
+
 /* footer */
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: #000;
   box-shadow: 0 0 1em #000;
   margin-top: 2em;
@@ -326,8 +363,9 @@ footer {
 
 /* additional classes */
 
-.width100 {
-  width: 100%;
+.blur {
+  filter: blur(5px);
+  transition: 250ms ease-in-out;
 }
 
 /* media queries */
@@ -339,5 +377,3 @@ footer {
     margin-top: 1.45em;
   }
 }
-
-
