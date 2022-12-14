@@ -117,6 +117,7 @@
   };
   const pageLoad = () => {
     $(`.page-load`).html(`Loading`);
+    $(`.container-movies`).html(`    <img class"loading-gif" src="./img/loading-gif.gif" alt="loading-gif">`);
     $(`.container-add`).hide();
     $(`#addMovieModal`).append(addMovieModal);
   };
@@ -178,6 +179,7 @@
           `);
       });
     });
+    $(`.container-movies`).empty();
     $(`.page-load`).html(`The Movies App`);
     $(`.container-add`).show();
     $(`.hidden`).removeClass(`hidden`);

@@ -115,6 +115,12 @@ body {
   margin: 1em 0;
 }
 
+.loading-gif {
+  height: 16px !important;
+  width: 16px !important;
+  margin: 0 1em;
+}
+
 .hidden {
   visibility: hidden;
 }
