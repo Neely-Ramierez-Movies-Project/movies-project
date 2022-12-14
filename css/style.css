@@ -83,6 +83,13 @@ body {
   z-index: 1;
 }
 
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
 .form-control:focus {
   color: inherit;
   background-color: #121212;
@@ -251,6 +258,13 @@ body {
   border: var(--border);
   overflow: hidden;
   cursor: pointer;
+}
+
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
+  -webkit-text-fill-color: white !important;
 }
 
 .more-info {
