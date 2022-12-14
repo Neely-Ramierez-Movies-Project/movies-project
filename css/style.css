@@ -83,6 +83,16 @@ body {
   z-index: 1;
 }
 
+#form-control:focus {
+  filter: brightness(2);
+  box-shadow: none;
+}
+
+#form-control:focus + .submit-button {
+  filter: brightness(2);
+  box-shadow: none;
+}
+
 .form-control:-webkit-autofill:focus,
 .form-control:-webkit-autofill:hover,
 .form-control:-webkit-autofill {
