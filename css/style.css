@@ -41,21 +41,27 @@ body {
 .path-2 {
   fill: #f7b239;
 }
+
 .path-3 {
   fill: #e09b2d;
 }
+
 .polygon-1 {
   fill: #e54728;
 }
+
 .path-4 {
   fill: #f95428;
 }
+
 .polygon-2 {
   fill: #f95428;
 }
+
 .path-5 {
   fill: #fff;
 }
+
 .path-6 {
   fill: #333;
 }
@@ -119,10 +125,6 @@ body {
   height: 16px !important;
   width: 16px !important;
   margin: 0 1em;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 /* content */
@@ -326,7 +328,7 @@ input:focus {
 /* modal design not content */
 
 .modal {
-  margin-top: 10em;
+  margin-top: 8em;
 }
 
 .modal-header {

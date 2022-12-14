@@ -117,7 +117,7 @@
   };
   const pageLoad = () => {
     $(`.page-load`).html(`Loading`);
-    $(`.container-movies`).html(`    <img class"loading-gif" src="./img/loading-gif.gif" alt="loading-gif">`);
+    $(`.container-movies`).html(`<img class"loading-gif" src="./img/loading-gif.gif" alt="loading-gif">`);
     $(`.container-add`).hide();
     $(`#addMovieModal`).append(addMovieModal);
   };
@@ -147,7 +147,7 @@
             }
           };
           const movieRating = () => {
-            if (movie.rating === 1) {
+            if (movie.rating === `1`) {
               movie.rating = rating.one;
             } else if (movie.rating === `2`) {
               movie.rating = rating.two;
@@ -175,14 +175,12 @@
           ${html.directorO}${movie.director}${html.directorC}
           ${html.genreO}${movie.genre}${html.genreC}
           ${html.ratingO}${movie.rating}${html.ratingC}
-          ${html.buttons}${html.divC}
-          `);
+          ${html.buttons}${html.divC}`);
       });
     });
     $(`.container-movies`).empty();
     $(`.page-load`).html(`The Movies App`);
     $(`.container-add`).show();
-    $(`.hidden`).removeClass(`hidden`);
     $(`#modal-submit-movie`).click((e) => {
       e.preventDefault();
       const movie = {
@@ -270,7 +268,6 @@
     });
   }
   $(`.container-movies`).click((e) => {
-    console.log(e.target);
     if ($(e.target).hasClass(`edit-movie`)) {
       let movieID = $(e.target).parent().parent().find(`.id-number`).text();
       let movieTitle = $(e.target).parent().parent().find(`.title`).text();
