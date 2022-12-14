@@ -34,6 +34,32 @@ body {
   filter: drop-shadow(0 0 0.125em #fff);
 }
 
+.path-1 {
+  fill: #f2f2f2;
+}
+
+.path-2 {
+  fill: #f7b239;
+}
+.path-3 {
+  fill: #e09b2d;
+}
+.polygon-1 {
+  fill: #e54728;
+}
+.path-4 {
+  fill: #f95428;
+}
+.polygon-2 {
+  fill: #f95428;
+}
+.path-5 {
+  fill: #fff;
+}
+.path-6 {
+  fill: #333;
+}
+
 .nav-link {
   text-shadow: 0 0 0.5em #000;
   cursor: pointer;
@@ -135,7 +161,6 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  /* width: 100%; */
   margin: 0.5em 1em;
 }
 
@@ -258,10 +283,21 @@ body {
   filter: brightness(0.75);
 }
 
-input,
-select {
+.modal * {
+  user-select: none;
+}
+
+input {
   border-radius: 1em;
   padding: 0.25em 1em;
+  box-shadow: 0 0 0.25em #000;
+  user-select: none;
+}
+
+input:focus {
+  outline: none;
+  filter: brightness(2);
+  box-shadow: 0 0 0.5em #000;
 }
 
 /* modals */
@@ -308,6 +344,18 @@ select {
   background-color: #fff;
 }
 
+#submit-edit {
+  margin: 0 0 1em 0;
+  width: 100%;
+}
+
+#submit-edit:hover {
+  filter: brightness(2);
+}
+
+#submit-edit:active {
+  box-shadow: 0 0 1em #000 inset;
+}
 /* modal form */
 
 .modal-body {
@@ -330,6 +378,7 @@ form,
 form label,
 .modal-footer {
   color: white !important;
+  text-shadow: 0 0 1em #000;
   background-color: #212529 !important;
 }
 
