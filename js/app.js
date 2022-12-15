@@ -117,7 +117,38 @@
   };
   const pageLoad = () => {
     $(`.page-load`).html(`Loading`);
-    $(`.container-movies`).html(`<img class"loading-gif" src="./img/loading-gif.gif" alt="loading-gif">`);
+    $(`.container-movies`).html(`
+    <div class="container-svg-loading">
+    <svg width="600" height="600">
+    <filter id="inset-shadow" x="-50%" y="-50%" width="200%" height="200%">
+     <feComponentTransfer in=SourceAlpha>
+       <feFuncA type="table" tableValues="1 0" />
+     </feComponentTransfer>
+     <feGaussianBlur stdDeviation="4"/>
+     <feOffset dx="0" dy="5" result="offsetblur"/>
+     <feFlood flood-color="rgb(0, 0, 0)" result="color"/>
+     <feComposite in2="offsetblur" operator="in"/>
+     <feComposite in2="SourceAlpha" operator="in" />
+     <feMerge>
+       <feMergeNode in="SourceGraphic" />
+       <feMergeNode />
+     </feMerge>
+   </filter>
+   <circle class="svg-circle-1" cx=50% cy=50% r=295 fill=#A5A5A5 filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=265 fill=#999999 filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=236 fill=#8C8C8C filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=208 fill=#7F7F7F filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=181 fill=#727272 filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=155 fill=#666666 filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=130 fill=#595959 filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=106 fill=#4C4C4C filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=83 fill=#3F3F3F filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=61 fill=#333333 filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=40 fill=#262626 filter="url(#inset-shadow)" />
+   <circle class="svg-circle-1" cx=50% cy=50% r=20 fill=#191919 filter="url(#inset-shadow)" />
+ </svg>
+    </div>
+    `);
     $(`.container-add`).hide();
     $(`#addMovieModal`).append(addMovieModal);
   };

@@ -433,6 +433,7 @@ footer {
 
 .bi-twitter {
   fill: #1c9cea !important;
+  /* filter: drop-shadow( 0em 1px 1px #fff); */
 }
 
 .bi-facebook {
@@ -457,5 +458,27 @@ footer {
     width: 75%;
     padding: 1.125em 0;
     margin-top: 1.25em;
+  }
+}
+
+/* svg loading page */
+
+.container-svg-loading {
+  scale: 0.75;
+}
+
+.svg-circle-1 {
+  animation: fade-out-in 1700ms infinite;
+}
+
+@keyframes fade-out-in {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
