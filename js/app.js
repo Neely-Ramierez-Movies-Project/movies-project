@@ -235,6 +235,12 @@
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
       });
     });
+    $(`.container-movies`).click((e) => {
+      if ($(e.target).hasClass(`poster`)) {
+        const movieId = $(e.target).parent().find(`img`).attr(`src`);
+        window.open(movieId, `_blank`);
+      }
+    });
   });
   function getMovieData() {
     $.get(url, (data) => {
